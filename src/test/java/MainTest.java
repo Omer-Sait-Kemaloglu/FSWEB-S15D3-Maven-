@@ -39,14 +39,14 @@ public class MainTest {
 
         assertEquals(idFields.getModifiers(), 2);
         assertEquals(firstnameFields.getModifiers(), 2);
-        assertEquals(lastnameFields.getModifiers(), 2);
+        assertEquals(2, lastnameFields.getModifiers());
     }
 
     @DisplayName("findDuplicates method doğru çalışıyor mu?")
     @Test
     public void testFindDuplicatesMethod() {
         List<Employee> list = Main.findDuplicates(employees);
-        assertEquals(list.size(), 3);
+        assertEquals(3, list.size());
         assertEquals(list.get(0).getFirstname(), "Dogancan");
     }
 
@@ -64,7 +64,7 @@ public class MainTest {
         List<Employee> list = Main.removeDuplicates(employees);
         System.out.println(list);
         assertEquals(list.size(), 1);
-        assertEquals(list.get(0).getFirstname(), "Burak");
+        assertEquals("Burak", list.get(0).getFirstname());
     }
 
     @DisplayName("calculatedWord method doğru çalışıyor mu?")
